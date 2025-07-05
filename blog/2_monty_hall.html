@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MONTY HALL</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="common.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <div class="max-w-2xl mx-auto p-6">
+    <a href="../index.html" class="text-blue-600 hover:underline">&larr; Back to home</a>
+    <h1 class="text-3xl font-bold mt-4 mb-2">MONTY HALL</h1>
+    <p class="text-sm text-gray-500 mb-6">Posted on April 18, 2025</p>
+    <div class="section introduction">
+      <p>I truly understand a topic when it ‘just’ intuitively makes sense, almost like System1 thinking. 
+      I don’t need to derive it or think from an alternative perspective for it to make sense. One could argue that it may not be true for all things under the sun (like quantum physics!!), but I would argue back that I most definitely don’t understand it. </p>
+      <br/>
+      <p>But the Monty Hall problem is no String theory or Quantum theory. Heck, its not even an exponential! It is only probability and given my day job, I am embarrassed to admit to myself that maybe I dont understand it as well as I think I do. </p>
+      <p>I have fallen into this weird cycle where I go over the problem --> instinctively reject the correct solution --> spend a lot of time thinking about it from different angles only to convince myself of the correct answer --> successfully convinced that the correct answer is indeed correct --> return to the problem after a gap of say 1 or 2 years, and arriving at the correct answer still takes a lot of brain power, far from the desired ‘intuitive understanding’.</p>
+      <p>I believe English (or any language) is a neat tool to understand maths. If we can explain in plain words, we can very well substitute them for symbols and phrase it a math problem. So, I decided to write about how I understand the solution so I can spot any inconsistencies or gaps in my understanding. I can also come back to it next time I find myself struggling with it, which I am convinced will happen the next time I think about it again!</p>
+    </div>
+      
+    <div class="section">
+      <p><b>[The longer Intuitive explanation]</b></p>
+      <p><i>The game from the player's perspective,</i></p>
+      <p>The player chooses a door, at random. Monty shows a goat. The player choses to stay or switch </p>
+      <br/>
+      <p><i>The game from the Monty's perspective,</i></p>
+      <p>The player chooses a door, then Monty chooses a door among the remaining two doors such that it reveals a goat. So, If the player choses the car, Monty can chose either of the doors because both have goats.If player chose a goat, Monty does not have any a choice and has to open the door with the other goat. So, the door that Monty did not open has to have the car.</p>
+      <br/>
+      <p><i>Now that we know Monty’s perspective and his limited choice when the player choses the goat, lets revisit the players perspective:</i></p>
+      <p>If the player picks the right door (car), Monty shows a goat, and the other closed door would also be a goat. </p>
+      <p>If the player picks the wrong door (goat), Monty is forced to open the door with the other other goat, hence the other closed door that Monty <b>could not open</b> has to be the car.</p>
+      <br/>
+      <p>Now, let’s assign probabilities, we have a 1/3 probability of choosing the car door and 2/3 probability of choosing the goat door wrong.So 2/3 of the times, Monty has no choice and the door he does not open must be the car and so we should switch.</p>
+    </div>
+    <div class="section">
+      <p><b>[The very short Intuitive explanation]</b></p>
+      <p>The player chooses a door with car —> Since he/she already has the right door, one should not switch.</p>
+      <p>The player chooses a door with goat —> Since he/she has the wrong door, and monty opened the only other wrong door, leaving the car door unopened, one should definitely switch.</p>
+      <br/>
+      <p>Since the second scenario is more common (2/3 vs 1/3), it would make sense to switch.</p>
+    </div>
+    <div class="section">
+      <p><b>[The Extreme example]</b></p>
+      <p>Replay the game with 100 doors (with 99 goats and 1 car). We choose one and then Monty opens 98 doors with goats. Should we switch?</p>
+      <br/>
+      <p>There is only 1% chance that we picked the door with the car. And 99% chance we picked the door with a goat. </p>
+      <p>In those 99% of cases, the door that Monty did not open has the car!</p>
+    </div>
+    <div class="section">
+      <p><b>[The Conditional Probability Tree Diagram]</b></p>
+      <p>...</p>
+    </div>
+    <div class="section">
+      <p><b>Other probability topics that stumped me</b></p>
+      <div class="sub-section">
+        <p><i>Confidence Intervals</i></p>
+        <p>A 95% confidence interval does not mean that there is a 95% chance that the true value is in your confidence interval.</p>
+        <p>Instead, it means that if you ran your experiment, say 100 times, and calculated the confidence interval 100 times, 95 of the times, the confidence interval you calculated would contain the true value.</p>
+      </div>
+      <div class="sub-section">
+        <p><i>Gaussian distribution and the Central Limit Theorem (CLT)</i></p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
