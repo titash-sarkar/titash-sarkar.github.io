@@ -1,0 +1,1 @@
+serious about big questions, curious without pretending to have resolved them

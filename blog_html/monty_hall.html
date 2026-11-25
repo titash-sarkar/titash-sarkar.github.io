@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="An intuitive explanation for why switching doors improves your odds." />
+  <meta name="theme-color" content="#07080d" />
+  <title>The Monty Hall problem</title>
+  <style>
+    :root{--bg:#07080d;--card:rgba(255,255,255,.03);--line:rgba(255,255,255,.10);--text:#e8e6e1;--soft:#c9c7c2;--muted:#9a9aa5;--faint:#858694;--gold:#d8b46a;--blue:#7fa8d9;--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}.wrap{width:min(1080px,calc(100% - 48px));margin:auto}.hero{padding:66px 0 36px}.site-title{margin-bottom:25px;color:var(--gold);font:400 clamp(1rem,2vw,1.25rem)/1.5 var(--mono);letter-spacing:.18em;text-transform:uppercase}.hero-image{display:block;width:100%;max-height:460px;object-fit:cover;object-position:center;margin-bottom:38px;border:1px solid var(--line)}.hero h2,.hero h3{font:italic 400 clamp(2.2rem,5vw,3.8rem)/1.05 var(--serif);margin:0 0 25px}.prose{max-width:760px;color:var(--soft);font-size:1.02rem}.prose p+p{margin-top:18px}.prose ul{list-style:none;margin:22px 0;padding:0 0 0 1.4rem}.prose li{position:relative;margin:12px 0;padding-left:.35rem;line-height:1.65}.prose li::before{content:"•";position:absolute;left:-1.4rem;color:var(--gold);font-size:1.15em}.prose strong{color:var(--blue);font:italic 500 1.12em var(--serif)}.prose h2,.prose h3{margin:34px 0 14px;color:var(--text);font:400 clamp(1.8rem,4vw,2.7rem)/1.1 var(--serif)}.page-section{padding:28px 0 52px;border-top:0}.section-title{max-width:38ch;margin-bottom:24px;padding-left:18px;border-left:1px solid var(--gold);color:var(--soft);font:italic 400 clamp(1.65rem,3.2vw,2.25rem)/1.15 var(--serif);letter-spacing:-.015em}.group{grid-column:1/-1;width:100%;display:flex;align-items:center;gap:16px;margin:28px 0 12px;padding:0;border:0;color:var(--gold);font:400 .72rem/1.5 var(--mono);letter-spacing:.18em;text-transform:uppercase}.group::after{content:"";flex:1;border-top:1px solid var(--line)}.essays{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.essay{padding:20px 19px;background:var(--card);border:1px solid var(--line);border-radius:12px}.sym{margin-bottom:11px;color:var(--blue);font:.78rem/1.5 var(--mono)}.essay h4{margin-bottom:8px;font:500 1.3rem/1.16 var(--serif)}.essay p{color:var(--muted);font-size:.84rem;line-height:1.55}.quote{max-width:760px;margin:24px auto 54px;padding:24px;border-left:2px solid var(--gold);color:var(--gold);font:italic 500 clamp(1.5rem,3vw,2.1rem)/1.25 var(--serif)}.quote p{margin:0}.quote cite{display:block;margin-top:12px;color:var(--muted);font:400 .7rem/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}footer{padding:26px 0 38px;border-top:1px solid var(--line);color:var(--faint);font-size:.78rem}
+    @media(max-width:850px){.essays{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.wrap{width:min(100% - 30px,1080px)}.hero{padding:40px 0 36px}.essays{grid-template-columns:1fr}.page-section{padding:28px 0 48px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero"><h1 class="site-title">The Monty Hall problem</h1><div class="prose"><h2>The need for an intuitive explanation</h2>
+      <p>I truly understand a topic when it <em>just</em> intuitively makes sense, almost like System 1 thinking. I do not need to derive it or think from an alternative perspective for it to make sense. One could argue that this may not be true for all things under the sun, like quantum physics, but I would argue back that I most definitely do not understand it.</p>
+      <p>But the Monty Hall problem is no string theory or quantum theory. Heck, it is not even an exponential! It is only probability and, given my day job, I am embarrassed to admit to myself that maybe I do not understand it as well as I think I do.</p>
+      <p>I have fallen into this weird cycle: I go over the problem, instinctively reject the correct solution, spend a long time thinking about it from different angles, and eventually convince myself of the correct answer. Then, one or two years later, I return to it and the answer still takes too much brain power to reach. It is far from the intuitive understanding I want.</p>
+      <p>I believe English, or any language, is a neat tool for understanding maths. If we can explain an idea in plain words, we can substitute symbols for those words and phrase it as a mathematical problem. So I decided to write about how I understand the solution, so that I can spot any inconsistencies or gaps. I can also return to it the next time I find myself struggling with it, which I am convinced will happen.</p>
+      <h2>The very short explanation</h2>
+      <p>The player chooses a door with the car. Since they already have the right door, they should not switch.</p>
+      <p>The player chooses a door with a goat. Since they have the wrong door, and Monty opens the only other wrong door, leaving the car door unopened, they should definitely switch.</p>
+      <p>Since the second scenario is more common—two thirds versus one third—it makes sense to switch.</p>
+      <h2>The longer explanation</h2>
+      <p><em>The game from the player's perspective:</em></p>
+      <p>The player chooses a door at random. Monty shows a goat. The player chooses to stay or switch.</p>
+      <p><em>The game from Monty's perspective:</em></p>
+      <p>The player chooses a door, then Monty chooses one of the remaining doors so that it reveals a goat. If the player chose the car, Monty can choose either remaining door because both have goats. If the player chose a goat, Monty has no choice: he must open the door with the other goat. The door Monty did not open must therefore have the car.</p>
+      <p>Now that we know Monty's perspective and his limited choice when the player chooses a goat, let us revisit the player's perspective:</p>
+      <ul>
+      <li>If the player picks the right door—the car—Monty shows a goat, and the other closed door is also a goat.</li>
+      <li>If the player picks the wrong door—a goat—Monty is forced to open the door with the other goat. The other closed door that Monty <strong>could not open</strong> has to be the car.</li>
+      </ul>
+      <p>Now assign probabilities. There is a one-third probability of choosing the car door and a two-thirds probability of choosing a goat door. Two thirds of the time, Monty has no choice and the door he does not open must be the car. So we should switch.</p>
+      <h2>The extreme example</h2>
+      <p>Replay the game with 100 doors: 99 goats and one car. We choose one door, then Monty opens 98 doors with goats. Should we switch?</p>
+      <p>There is only a 1% chance that we picked the door with the car, and a 99% chance that we picked a goat. In those 99% of cases, the door Monty did not open has the car.</p>
+      <h2>The conditional probability tree diagram</h2>
+      <p>To be added.</p>
+      <h2>Other probability topics that stumped me</h2>
+      <h3>Confidence intervals</h3>
+      <p>A 95% confidence interval does not mean that there is a 95% chance that the true value is in your confidence interval.</p>
+      <p>Instead, it means that if you ran your experiment 100 times and calculated the confidence interval each time, around 95 of those intervals would contain the true value.</p>
+      <h3>Gaussian distribution and the Central Limit Theorem</h3>
+      <p>To be added.</p>
+      <h2>Enrich Further</h2>
+      <ul>
+      <li><a href="https://medium.com/@guha.ashwin/rong-but-reasonable-chapter-39-e62c0cc832db">Rong and Reasonable, chapter 39</a></li>
+      <li><a href="https://www.youtube.com/watch?v=_YRfSe-f1FE">Video explanation</a></li>
+      </ul></div></header>
+    <footer>A notebook of rational inquiry</footer>
+  </main>
+</body>
+</html>
